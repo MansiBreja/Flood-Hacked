@@ -1,11 +1,11 @@
 # Flood-Hacked
 *...80 dams opened, 325 dead, Kerala needs us*
 
-##Introduction
+## Introduction
 
-##Description
+## Description
 
-##Working and Implementation
+## Working and Implementation
 
 ## Installation Requirements
 
@@ -31,7 +31,7 @@ Enter the command: "python manage.py runserver"
 Copy the url and paste it in your favourite browser window.
 ```
 
-##See for yourself:
+## See for yourself:
 
 
 
