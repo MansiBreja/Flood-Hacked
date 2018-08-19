@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block headblock %}
+  <!-- <link rel="stylesheet" href="{% static 'simplesocial/css/instr.css' %}"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'simplesocial/css/image.css' %}">
+
+{% endblock %}
+
+{% block fullscreen %}
+
+<header class="bg-image">
+
+  <Center>
+  <h1>THE IDEA
+</h1>
+<h4 align="left" id="para">
+  Problem: No road connectivity and predetermined information about the current topography
+  <br>
+  Solution - Using Drones to survey and  api to determine water level and hence determining flooded and non flooded areas.
+<br>
+<br>
+Problem : Determining efficient way of grouping the shelter homes
+<br>
+Solution: Using K-means clustering algorithm( unsupervised ML) and allocating drones proportionally as per the size of the cluster.
+<br>
+<br>
+Problem: Road Vehicles cannot be used and helicopters have fuel,capacity,terrain and positioning constraints
+<br>
+Solution:1) Entire topography consisting of various shelter homes is divided into disconnected clusters each with a central node.
+<br>
+2) Each helicopter launches drones at the nodes which are further responsible for transporting the supplies to the connected shelter homes in that cluster.
+</h4>
+
+  </header>
+
+{% endblock %}

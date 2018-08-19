@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% load bootstrap3 %}
+
+{% block headblock %}
+ <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container " style="height:100px;font-size:14pt;">
+    <!-- <h1>DIAGNOSIS</h1>
+    <form method="POST" class="form">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <input type="submit" value="Diagnose!" class="btn btn-default">
+    </form> -->
+
+<h4 style="margin-left:200px;font-size:20px;color:purple">Add the locations of shelter homes</h4>
+
+
+    {% for eachloc in locations %}
+    <h3 style="color:black;">{{ eachloc.location }}</h3>
+    {% endfor %}
+    <form method="post"  >
+        {% csrf_token %}
+        {{ form.as_p }}
+
+
+        <button type="submit" style="margin-left:230px;">Add more shelter homes</button>
+      </form>
+      <br>
+    <a href="{% url 'accounts:inputhelicopdrones' %}" style="margin-left:260px;font-size:20px;"><button>Find coordinates</button></a>
+
+
+</div>
+{% endblock %}
