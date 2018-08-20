@@ -2,6 +2,7 @@
 *...80 dams opened, 325 dead, Kerala needs us*
 
 ## Introduction
+A web app which provides an optimal solution to distribute food across all the relief shelters in a city, given limited resources including limited number of helicopters, drones, fuel, food supply and most importantly, time. 
 
 ## Description
 
