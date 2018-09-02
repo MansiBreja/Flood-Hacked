@@ -4,9 +4,20 @@
 ## Introduction
 A web app which provides an optimal solution to distribute food across all the relief shelters in a city, given limited resources including limited number of helicopters, drones, fuel, food supply and most importantly, time. 
 
-## Description
-
 ## Working and Implementation
+<ul>
+<li>Our project requires a certain preprocessing, that is, a survey would have to be conducted where in drones will fly over the concerned territory and record locations of all the shelter homes. These locations will be inputted to our application and using the google map api, we can easily generate the geocodes of all the shelter homes.
+<li>Apart from these locations as an input, the second input we would be needing is the number of helicopters and drones available for the operation which will be constrained by the government's budget.
+<li>Having taken the necessary inputs, the algorithm to decide where should each helicopter release its drones and to which places should each drone drop supplies is as follows:
+<ol>
+  <li> Let the number of helicopters available be k. So, we divide the shelter homes into k clusters. Each cluster will have one helicopter each releasing drones for the distribution of supplies within that cluster.
+  <li> To divide the homes into clusters, k means clustering is used, which uses geocode, water level and population density of these locations as the features.
+  <li> Once we have the clusters, we compute the centroid of each cluster where helicopter will be sent.
+  <li> Now we have to divide the available drones among these clusters, which is done in poroportion to the number of shelter homes in a cluster. The more the number of shelter homes a cluster has, higher number of drones are assigned to it.
+  <li> To further define the group of homes for each drone, k means algorithm is used again. Suppose for a cluster i, we have a<sub>i</sub> drones. So we perform k means with k equal to a<sub>i</sub>.
+    <li> Thus we have the geocodes of the centroids where each helicopter will be releasing the drones and also the locations where each drone will be distributing supplies.
+</ol>
+</ul>
 
 ## Installation Requirements
 
@@ -16,6 +27,8 @@ Language : Python, Version : 3.6.3
 
 To run it, you need to install some packages and libraries as follows:
 Bootstrap 3
+numpy
+sklearn
 bcrypt
 django[argon]
 
